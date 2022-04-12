@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: samarthgowda.com
+Token: 66f31a1e04efe14162206ebed478e6716d752f5d6d8f78aa623bb2f4466a94bf
