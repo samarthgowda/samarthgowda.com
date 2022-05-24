@@ -76,7 +76,7 @@ export default function Home() {
           <div className="flex flex-col items-center md:items-start justify-center">
             <div className="w-40 h-40 bg-gradient-to-br from-orange-400 to-pink-400 p-2 rounded-full">
               <Image
-                src="/images/samarth-at-table.jpg"
+                src="/images/samarth.jpg"
                 alt="Samarth Gowda at a table"
                 height="1000"
                 width="1000"
