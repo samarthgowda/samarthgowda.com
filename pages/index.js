@@ -109,9 +109,7 @@ export default function Home() {
                   web4.lol
                 </a>
               </p>
-              <p>
-                🏛️ Studied Statistics and Machine Learning @ Carnegie Mellon
-              </p>
+              <p>🏛️ Studied Stats & ML @ Carnegie Mellon</p>
             </div>
           </div>
           <div className="flow-root mt-6 md:mt-12">
