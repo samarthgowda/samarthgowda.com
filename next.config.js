@@ -12,6 +12,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/web4",
+        destination: "https://web4.lol",
+        permanent: true,
+      },
+      {
         source: "/pralent",
         destination: "https://pralent.com",
         permanent: true,
