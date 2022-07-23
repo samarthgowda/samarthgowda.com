@@ -7,6 +7,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/lens",
+        destination: "https://www.lensfrens.xyz/samarthgowda.lens",
+        permanent: true,
+      },
+      {
+        source: "/ahta",
+        destination: "https://ahta.live",
+        permanent: true,
+      },
+      {
         source: "/skube",
         destination: "https://skube.xyz",
         permanent: true,

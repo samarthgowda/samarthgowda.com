@@ -1,17 +1,22 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import { SiTwitter, SiLinkedin, SiGithub, SiYoutube } from "react-icons/si";
 import {
   IoPersonCircle,
-  IoCube,
   IoNewspaper,
   IoPeople,
   IoRocket,
+  IoLeaf,
 } from "react-icons/io5";
 import Image from "next/image";
 
 const links = [
+  {
+    href: "/lens",
+    name: "Lens",
+    handle: "samarthgowda.lens",
+    icon: <IoLeaf />,
+  },
   {
     href: "/profile",
     name: "My Profile",
@@ -44,11 +49,6 @@ const links = [
     href: "/blog",
     name: "Blog",
     icon: <IoNewspaper />,
-  },
-  {
-    href: "/skube",
-    name: "skube.xyz",
-    icon: <IoCube />,
   },
   {
     href: "/web4",
@@ -88,28 +88,19 @@ export default function Home() {
             </h2>
             <div className="text-gray-400 flex flex-col space-y-1 items-center md:items-start">
               <p>
-                🏗️ Building{" "}
+                ⚽ building web3 sports social{" "}
                 <a
-                  href="https://skube.xyz"
+                  href="https://ahta.live"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline cursor-pointer text-pink-500 hover:text-pink-400"
                 >
-                  skube.xyz
+                  ahta.live
                 </a>
               </p>
-              <p>
-                🚀 Figuring out what to do with{" "}
-                <a
-                  href="https://web4.lol"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline cursor-pointer text-pink-500 hover:text-pink-400"
-                >
-                  web4.lol
-                </a>
-              </p>
-              <p>🏛️ Studied Stats & ML @ Carnegie Mellon</p>
+              <p>☕ coffee and code</p>
+              <p>📈 stats&ml @ carnegie mellon alum</p>
+              <p>🦅 flyeaglesfly</p>
             </div>
           </div>
           <div className="flow-root mt-6 md:mt-12">
