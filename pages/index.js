@@ -4,6 +4,54 @@ import { useTheme } from "next-themes";
 
 import { SiLinkedin, SiTwitter, SiGithub } from "react-icons/si";
 
+import { motion } from "framer-motion";
+
+const projectContainer = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.7,
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const projectItem = {
+  hidden: { y: 10, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
+const contactContainer = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 2.2,
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const contactItem = {
+  hidden: { y: 10, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
 const projects = [
   {
     name: "ahta sports",
@@ -68,7 +116,13 @@ export default function Home() {
       <div className="mx-auto max-w-5xl p-6 sm:p-12 md:p-28 lg:p-36 xl:p-44">
         <div className="flex flex-col items-center justify-center gap-16 md:items-start">
           <div className="space-y-6">
-            <div
+            <motion.div
+              initial={{ y: 0, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: ".7",
+                delay: ".2",
+              }}
               className="h-20 w-20 rounded-lg bg-lime-400 p-0.5 duration-300 ease-in-out hover:h-56 hover:w-56"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
@@ -79,11 +133,26 @@ export default function Home() {
                 width="1000"
                 className="mx-auto rounded-lg object-cover"
               />
-            </div>
-            <h2 className="font-serif text-2xl font-medium italic">
+            </motion.div>
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: ".7",
+                delay: ".2",
+              }}
+              className="font-serif text-2xl font-medium italic"
+            >
               Samarth Gowda
-            </h2>
-            <p>
+            </motion.div>
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: ".7",
+                delay: ".3",
+              }}
+            >
               Building{" "}
               <span className="font-serif font-semibold italic">
                 full-stack apps
@@ -103,8 +172,15 @@ export default function Home() {
                 ahta sports
               </a>
               .
-            </p>
-            <p>
+            </motion.div>
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: ".7",
+                delay: ".4",
+              }}
+            >
               Recently graduated in{" "}
               <span className="font-serif font-semibold italic">
                 Stats & Machine Learning
@@ -113,15 +189,32 @@ export default function Home() {
               <span className="font-serif font-semibold italic">
                 Carnegie Mellon (&apos;22)
               </span>
-            </p>
+            </motion.div>
           </div>
           <div className="w-full">
-            <p className="text-sm text-zinc-700 dark:text-zinc-400">
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: ".7",
+                delay: ".5",
+              }}
+              className="text-sm text-zinc-700 dark:text-zinc-400"
+            >
               Check these out 👀
-            </p>
-            <div className="divide-y divide-zinc-300 dark:divide-zinc-700">
+            </motion.div>
+            <motion.div
+              variants={projectContainer}
+              initial="hidden"
+              animate="visible"
+              className="divide-y divide-zinc-300 dark:divide-zinc-700"
+            >
               {projects.map((project, index) => (
-                <div className="flex items-center gap-4 py-4" key={index}>
+                <motion.div
+                  variants={projectItem}
+                  className="flex items-center gap-4 py-4"
+                  key={index}
+                >
                   <div className="h-10 w-10">
                     <Image
                       src={project.logo}
@@ -154,21 +247,35 @@ export default function Home() {
                       {project.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
           {/* Favorite tech stack */}
           {/* Gallery */}
           {/* Videos */}
           {/* Contact */}
           <div className="w-full">
-            <p className="text-sm text-zinc-700 dark:text-zinc-400">
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: ".7",
+                delay: "2",
+              }}
+              className="text-sm text-zinc-700 dark:text-zinc-400"
+            >
               Get in touch 📬
-            </p>
-            <div className="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2 lg:grid-cols-3">
+            </motion.div>
+            <motion.div
+              variants={contactContainer}
+              initial="hidden"
+              animate="visible"
+              className="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2 lg:grid-cols-3"
+            >
               {links.map((link, index) => (
-                <div
+                <motion.div
+                  variants={contactItem}
                   key={index}
                   className="relative flex items-center space-x-4 rounded-lg border border-zinc-300 px-4 py-2 hover:border-zinc-400 dark:border-zinc-700 hover:dark:border-zinc-600"
                 >
@@ -189,9 +296,9 @@ export default function Home() {
                       </p>
                     </a>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
